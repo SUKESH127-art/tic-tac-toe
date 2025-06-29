@@ -1,6 +1,7 @@
 /** @format */
 
 import { useState } from "react";
+import Product from "./Product";
 
 export default function Game() {
 	const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -23,9 +24,7 @@ export default function Game() {
 		let description = move > 0 ? "Go to move #" + move : "Go to game start";
 
 		return (
-			<li key={move}>
-				<button onClick={() => jumpTo(move)}>{description}</button>
-			</li>
+			<>{/* <button onClick={() => jumpTo(move)}>{description}</button> */}</>
 		);
 	});
 
@@ -70,7 +69,7 @@ function Board({ isXNext, squares, onPlay }) {
 
 	return (
 		<>
-			<div className="status">{stat}</div>
+			{/* <div className="status">{stat}</div>
 			<div className="board-row">
 				<Square value={squares[0]} onSquareClick={() => handleClick(0)} />
 				<Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -85,7 +84,8 @@ function Board({ isXNext, squares, onPlay }) {
 				<Square value={squares[6]} onSquareClick={() => handleClick(6)} />
 				<Square value={squares[7]} onSquareClick={() => handleClick(7)} />
 				<Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-			</div>
+			</div> */}
+			<Product />
 		</>
 	);
 }
